@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Curto-Circuito · Cruzadinha de Arquitetura Computacional</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Cabeçalho do jogo -->
+  <header class="topo">
+    <p class="serigrafia">PCB-ARQCOMP · REV 1.0 · 16 COMPONENTES</p>
+    <h1>Curto<span class="raio">⚡</span>Circuito</h1>
+    <p class="subtitulo">Encaixe todas as peças certas e ligue o computador.</p>
+  </header>
+
+  <main class="layout">
+
+    <!-- Lado esquerdo: a placa (tabuleiro) -->
+    <section class="placa" aria-label="Tabuleiro da cruzadinha">
+      <div class="pista-ativa" id="pistaAtiva">
+        Clique numa casa ou numa pista para começar.
+      </div>
+
+      <!-- O JavaScript cria as casas dentro desta div -->
+      <div class="tabuleiro" id="tabuleiro"></div>
+
+      <div class="controles">
+        <button class="botao botao-conferir" id="btnConferir">Conferir</button>
+        <button class="botao botao-reiniciar" id="btnReiniciar">Reiniciar</button>
+        <p class="contador" id="contador">0 de 16 palavras</p>
+      </div>
+
+      <!-- Barra de "energia": enche conforme as palavras certas -->
+      <div class="energia" aria-hidden="true">
+        <span class="energia-rotulo">ENERGIA</span>
+        <div class="energia-trilho"><div class="energia-barra" id="barraEnergia"></div></div>
+      </div>
+
+      <p class="mensagem" id="mensagem"></p>
+    </section>
+
+    <!-- Lado direito: pistas -->
+    <aside class="painel">
+      <section class="bloco-pistas">
+        <h2>Horizontais <span>→</span></h2>
+        <ol class="lista-pistas" id="pistasHorizontais"></ol>
+      </section>
+
+      <section class="bloco-pistas">
+        <h2>Verticais <span>↓</span></h2>
+        <ol class="lista-pistas" id="pistasVerticais"></ol>
+      </section>
+
+      <section class="como-jogar">
+        <h2>Como jogar</h2>
+        <ul>
+          <li>Clique numa casa e digite. O cursor anda sozinho.</li>
+          <li>Clique de novo na mesma casa para trocar entre horizontal e vertical.</li>
+          <li>Use as setas para andar e Backspace para apagar.</li>
+          <li>Aperte <strong>Conferir</strong> (ou Enter): o LED fica verde se a palavra está certa e vermelho se está errada. Palavras incompletas não acendem.</li>
+        </ul>
+      </section>
+    </aside>
+  </main>
+
+  <!-- Tela que aparece quando o jogador acerta tudo -->
+  <div class="boot" id="telaBoot" hidden>
+    <div class="boot-janela">
+      <pre class="boot-texto" id="bootTexto"></pre>
+      <div class="boot-botoes">
+        <button class="botao botao-conferir" id="btnFecharBoot">Ver a placa</button>
+        <button class="botao botao-reiniciar" id="btnJogarDeNovo">Jogar de novo</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="rodape">
+    Projeto estático feito com HTML, CSS e JavaScript puros · Arquitetura Computacional
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
