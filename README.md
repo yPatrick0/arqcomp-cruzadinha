@@ -3,7 +3,7 @@
 Cruzadinha de **Arquitetura Computacional** que roda no navegador.
 O tabuleiro é uma placa de circuito: cada palavra certa acende um LED verde e enche a barra de energia. Quando as 16 peças estão certas, o computador **liga**.
 
-🔗 **Jogue aqui:** https://SEU-USUARIO.github.io/arqcomp-cruzadinha/
+🔗 **Jogue aqui:** https://ypatrick0.github.io/arqcomp-cruzadinha/
 
 ---
 
